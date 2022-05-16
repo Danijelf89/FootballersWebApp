@@ -43,7 +43,7 @@ namespace WebApplication1.Controllers
 
 
         [HttpGet("Getfootballers")]
-        public async Task<ActionResult<IEnumerable<Footballer>>> Getfootballers()
+        public List<Footballer> Getfootballers()
         {
              try
               {
@@ -55,7 +55,7 @@ namespace WebApplication1.Controllers
                     }
                  }
 
-                return await Context.Footballer.ToListAsync();
+                return Context.Footballer.ToList();
 
              }
 

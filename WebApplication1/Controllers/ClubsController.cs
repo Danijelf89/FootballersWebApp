@@ -38,9 +38,9 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("GetClubs")]
-        public async Task<ActionResult<IEnumerable<Club>>> GetClubs()
+        public List<Club> GetClubs()
         {
-            return await Context.Club.ToListAsync();
+            return Context.Club.ToList();
         }
 
         [HttpDelete("DeleteClub/{id:int}")]
