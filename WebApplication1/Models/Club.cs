@@ -24,6 +24,9 @@ namespace WebApplication1.Models
         public string Owner { get; set; }
         [Required]
         public bool IsDefault { get; set; }
+
+        [Required]
+         public DateTime CreationDate { get; set; }
         //public int Price { get; set; }
     }
 }

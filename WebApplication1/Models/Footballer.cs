@@ -28,5 +28,8 @@ namespace WebApplication1.Models
 
         public Club Club { get; set; }
         public string Status { get; set; }
+
+        [Required]
+        public DateTime CreationDate { get; set; }
     }
 }
