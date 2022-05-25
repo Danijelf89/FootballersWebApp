@@ -16,6 +16,7 @@ namespace WebApplication1.Context
 
         public DbSet<Footballer> Footballer { get; set; }
         public DbSet<Club> Club { get; set; }
+        public DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NQN2EUf9wjiVr+XfkqQBdZOwh7pfK0ssmoREay1wLTjpdKK58OddcoIdJiNWdUMQ6YBrCOpysafJAIcDRMzq3Q==",
+  "dgSpecHash": "nTDSEeL4MyNTQ4x/FJ+WydlUOP8eEjkCtcSbnLTVrMIjhdwYOiZwbyGrTrMPgDiLPXiOjPIcN4gGgcM/u9BphQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\CD-LP000026\\Desktop\\FootballersWebApp\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CD-LP000026\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.8\\microsoft.aspnet.razor.3.2.8.nupkg.sha512",
     "C:\\Users\\CD-LP000026\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.8\\microsoft.aspnet.webpages.3.2.8.nupkg.sha512",
+    "C:\\Users\\CD-LP000026\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.24\\microsoft.aspnetcore.authentication.jwtbearer.3.1.24.nupkg.sha512",
     "C:\\Users\\CD-LP000026\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\CD-LP000026\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\CD-LP000026\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",

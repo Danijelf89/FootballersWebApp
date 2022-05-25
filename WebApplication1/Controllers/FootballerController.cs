@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Nancy.Json;
@@ -65,6 +66,7 @@ namespace WebApplication1.Controllers
              }           
         }
 
+        [Authorize(Roles ="Manager")]
         [HttpDelete("DeleteFootballer/{id:int}")]
         public void DeleteFootballer(int id)
         {

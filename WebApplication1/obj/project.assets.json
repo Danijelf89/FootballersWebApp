@@ -30,6 +30,21 @@
           "lib/net45/System.Web.WebPages.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.24": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cors/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2342,6 +2357,21 @@
         "lib/net45/System.Web.WebPages.xml",
         "microsoft.aspnet.webpages.3.2.8.nupkg.sha512",
         "microsoft.aspnet.webpages.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.24": {
+      "sha512": "4szRfirepbpcBBHdCQ9VnlUoJso/ec5G5BMHTO6HDsboBaVYNm4CwbdV5EmEB8ip9Vgxn9zX5pzhaTOEdDL/5Q==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.24",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.3.1.24.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cors/2.2.0": {
@@ -7757,6 +7787,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.AspNet.WebPages >= 3.2.8",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.24",
       "Microsoft.AspNetCore.Cors >= 2.2.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.24",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.24",
@@ -7813,6 +7844,10 @@
           "Microsoft.AspNet.WebPages": {
             "target": "Package",
             "version": "[3.2.8, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[3.1.24, )"
           },
           "Microsoft.AspNetCore.Cors": {
             "target": "Package",

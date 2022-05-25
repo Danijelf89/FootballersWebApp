@@ -146,3 +146,4 @@ C:\Users\CD-LP000026\Desktop\FootballersWebApp\WebApplication1\obj\Debug\netcore
 C:\Users\CD-LP000026\Desktop\FootballersWebApp\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.dll
 C:\Users\CD-LP000026\Desktop\FootballersWebApp\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.pdb
 C:\Users\CD-LP000026\Desktop\FootballersWebApp\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
+C:\Users\CD-LP000026\Desktop\FootballersWebApp\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
