@@ -57,23 +57,27 @@ namespace WebApplication1.Controllers
                         var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
                         var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
+
+
+
+
                         var claims = new List<Claim>
                         {
                             new Claim(ClaimTypes.Name, user.UserName),
-                             new Claim(ClaimTypes.Role, "Operator")
+                             new Claim(ClaimTypes.Role, user.Role)
                         };
 
                         var tokenOptions = new JwtSecurityToken(
                             issuer: "https://localhost:44307",
                             audience: "https://localhost:44307",
-                            claims: new List<Claim>(),
+                            claims: claims,
                             expires: DateTime.Now.AddMinutes(5),
                             signingCredentials: signingCredentials
 
                             );
 
                         var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-                        return Ok(new { Token = tokenString });
+                        return Ok(new { Token = tokenString , User = user.UserName, Role = user.Role });
                     }
                 }
                

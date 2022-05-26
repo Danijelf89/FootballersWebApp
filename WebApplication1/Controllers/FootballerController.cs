@@ -66,7 +66,7 @@ namespace WebApplication1.Controllers
              }           
         }
 
-        [Authorize(Roles ="Manager")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("DeleteFootballer/{id:int}")]
         public void DeleteFootballer(int id)
         {
@@ -86,6 +86,7 @@ namespace WebApplication1.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddNewFootballer")]
         public void AddNewFootballer(Footballer footballer)
         {
@@ -104,8 +105,8 @@ namespace WebApplication1.Controllers
             } 
         }
 
-
-       [HttpPut("UpdateFootballer")]
+        [Authorize(Roles = "Admin")]
+        [HttpPut("UpdateFootballer")]
        public void UpdateFootballer(Footballer footbaler)
         {
             try
