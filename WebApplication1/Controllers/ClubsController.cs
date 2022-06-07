@@ -40,6 +40,8 @@ namespace WebApplication1.Controllers
         [HttpGet("GetClubs")]
         public List<Club> GetClubs()
         {
+
+          
             return Context.Club.ToList();
         }
 
@@ -70,6 +72,23 @@ namespace WebApplication1.Controllers
                
                 throw ex;
             }
+        }
+
+        [HttpGet("GetClubsFootballers/{id:int}")]
+        public List<Footballer> GetClubsFootballers(int id)
+        {
+            try
+            {
+                List<Footballer> test = context.Footballer.Where(x => x.ClubId == id).ToList();
+
+                return context.Footballer.Where(x => x.ClubId == id).ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return new List<Footballer>();
         }
 
         [HttpPost("AddNewClub")]

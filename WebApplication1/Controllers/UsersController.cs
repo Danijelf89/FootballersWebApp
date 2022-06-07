@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -40,6 +41,15 @@ namespace WebApplication1.Controllers
             }
         }
 
+        //[Authorize(Roles = "Admin")]
+        [HttpGet("GetUsers")]
+        public List<Users> GetUsers()
+        {
+            return Context.Users.ToList();
+        }
+
+
+
         [HttpPost, Route("login")]
         public IActionResult Login([FromBody]Users users)
         {
@@ -57,10 +67,6 @@ namespace WebApplication1.Controllers
                         var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
                         var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
-
-
-
-
                         var claims = new List<Claim>
                         {
                             new Claim(ClaimTypes.Name, user.UserName),
@@ -71,19 +77,71 @@ namespace WebApplication1.Controllers
                             issuer: "https://localhost:44307",
                             audience: "https://localhost:44307",
                             claims: claims,
-                            expires: DateTime.Now.AddMinutes(5),
+                            expires: DateTime.Now.AddMinutes(15),
                             signingCredentials: signingCredentials
 
                             );
 
                         var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-                        return Ok(new { Token = tokenString , User = user.UserName, Role = user.Role });
+                        return Ok(new { Token = tokenString , Name = user.Name,Surname = user.Surname , Role = user.Role });
                     }
                 }
                
             }
 
             return Unauthorized();
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("AddNewUser")]
+        public void AddNewUser([FromBody] Users user)
+        {
+            try
+            {
+                context.Users.Add(user);
+                context.SaveChanges();
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("DeleteUser/{id:int}")]
+        public void DeleteUser(int id)
+        {
+            try
+            {
+                Users user = Context.Users.FirstOrDefault(x => x.Id == id);
+
+                if (user != null)
+                {
+                    Context.Users.Remove(user);
+                    Context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpPut("UpdateUser")]
+        public void UpdateClub([FromBody]  Users user)
+        {
+            try
+            {
+                context.Users.Update(user);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

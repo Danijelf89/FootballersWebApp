@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace WebApplication1.Models
@@ -26,7 +27,10 @@ namespace WebApplication1.Models
         public bool IsDefault { get; set; }
 
         [Required]
-         public DateTime CreationDate { get; set; }
-        //public int Price { get; set; }
+        public DateTime CreationDate { get; set; }
+       
+        public string PictureUrl { get; set; }
+
+       
     }
 }

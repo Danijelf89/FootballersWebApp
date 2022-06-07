@@ -18,5 +18,11 @@ namespace WebApplication1.Models
 
         [Required]
         public string Role { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string Surname { get; set; }
     }
 }

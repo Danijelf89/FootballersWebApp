@@ -31,5 +31,7 @@ namespace WebApplication1.Models
 
         [Required]
         public DateTime CreationDate { get; set; }
+
+        public string PictureUrl { get; set; }
     }
 }
